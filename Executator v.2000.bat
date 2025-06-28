@@ -3,7 +3,7 @@ color 2
 title Executator v.2000
 
 chcp 65001 > nul
-mode 150,20
+mode 150,30
 
 :TELA_LOGIN
 cls
@@ -52,10 +52,12 @@ if /I "%senhaDigitada%"=="%senhaCorreta%" (
 cls
 call :banner
 echo.
-echo (1) Liberdade Total (taskkill)
+echo (1) Liberdade Total 
 echo (2) Abrir Calculadora
-echo (3) Logout (Voltar para tela de login)
-echo (4) Sair do Programa
+echo (3) Logout
+echo (4) AI/IA
+echo (5) dc(dev)
+echo (6) Sair
 echo.
 
 :ferramenta
@@ -71,7 +73,9 @@ set /p "input=Escolha a ferramenta: "
 if %input% EQU 1 goto acao_liberdade
 if %input% EQU 2 goto acao_calculadora
 if %input% EQU 3 goto TELA_LOGIN
-if %input% EQU 4 exit /b
+if %input% EQU 4 goto acao_chatgpt
+if %input% EQU 5 goto acao_dev
+if %input% EQU 6 exit /b
 
 echo Opcao invalida. Tente novamente.
 pause
@@ -81,6 +85,21 @@ goto menuPrincipal
 :: =============================================================
 :: ACOES DAS FERRAMENTAS (CODIGO MAIS ORGANIZADO)
 :: =============================================================
+
+:acao_dev
+echo Abrindo...
+start https://discord.com/developers/applications
+pause
+goto menuPrincipal
+
+
+
+:acao_chatgpt
+echo Abrindo...
+start https://chatgpt.com/
+pause
+goto menuPrincipal
+
 
 :acao_liberdade
 echo Finalizando o processo qubnfe.exe...
