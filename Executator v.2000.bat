@@ -106,7 +106,7 @@ cls
 call :banner
 echo.
 echo (1) Liberdade Total 
-echo (2) Abrir Calculadora
+echo (2) git
 echo (3) Logout
 echo (4) AI/IA
 echo (5) dc(dev)
@@ -125,7 +125,7 @@ set /p "input=Escolha a ferramenta: "
 :: =============================================================
 
 if %input% EQU 1 goto acao_liberdade
-if %input% EQU 2 goto acao_calculadora
+if %input% EQU 2 goto acao_git
 if %input% EQU 3 goto TELA_LOGIN
 if %input% EQU 4 goto acao_chatgpt
 if %input% EQU 5 goto acao_dev
@@ -171,9 +171,9 @@ echo Processo finalizado.
 pause
 goto menuPrincipal
 
-:acao_calculadora
-echo Abrindo a calculadora...
-start calc
+:acao_git
+echo Iniciando git...
+start https://github.com/PauloAlambert
 goto menuPrincipal
 
 
