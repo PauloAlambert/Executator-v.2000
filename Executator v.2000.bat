@@ -111,7 +111,8 @@ echo (3) Logout
 echo (4) AI/IA
 echo (5) dc(dev)
 echo (6) np
-echo (7) Sair
+echo (7) Ip Messager
+echo (8) Sair
 echo.
 
 :ferramenta
@@ -130,7 +131,8 @@ if %input% EQU 3 goto TELA_LOGIN
 if %input% EQU 4 goto acao_chatgpt
 if %input% EQU 5 goto acao_dev
 if %input% EQU 6 goto acao_newpass
-if %input% EQU 7 exit /b
+if %input% EQU 7 goto acao_ipmessager
+if %input% EQU 8 exit /b
 
 echo Opcao invalida. Tente novamente.
 pause
@@ -176,6 +178,27 @@ echo Iniciando git...
 start https://github.com/PauloAlambert
 goto menuPrincipal
 
+
+
+:acao_ipmessager
+cls
+color 2
+echo.
+echo.
+echo         ██╗██████╗     ███╗   ███╗███████╗███████╗███████╗ █████╗  ██████╗ ███████╗██████╗ 
+echo         ██║██╔══██╗    ████╗ ████║██╔════╝██╔════╝██╔════╝██╔══██╗██╔════╝ ██╔════╝██╔══██╗
+echo         ██║██████╔╝    ██╔████╔██║█████╗  ███████╗███████╗███████║██║  ███╗█████╗  ██████╔╝
+echo         ██║██╔═══╝     ██║╚██╔╝██║██╔══╝  ╚════██║╚════██║██╔══██║██║   ██║██╔══╝  ██╔══██╗
+echo         ██║██║         ██║ ╚═╝ ██║███████╗███████║███████║██║  ██║╚██████╔╝███████╗██║  ██║
+echo         ╚═╝╚═╝         ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝
+echo.
+echo.
+set /p "nameinput=Coloque o nome do pc: "
+set /p "msg=Coloque a menssagem: "
+msg * /Server:%nameinput% %msg%
+pause
+cls 
+goto menuPrincipal
 
 :banner
 echo.
